@@ -20,6 +20,10 @@ class EasyDOM {
     static get doc() {
         return new EasyDOM(document.body);
     }
+    static onLoad(handler) {
+        return document.addEventListener("DOMContentLoaded", handler);
+    }
+    
     static $all(...args) {
         const doc = new EasyDOM(document);
         return doc.$all(...args);
