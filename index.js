@@ -1,3 +1,4 @@
+// url: https://cdn.jsdelivr.net/gh/lianecagara/EasyDOM@refs/heads/main/index.js
 class EasyDOM {
     constructor(element) {
         if (typeof element === 'string') {
@@ -98,13 +99,7 @@ class EasyDOM {
     }
 
     append(child) {
-        if (child instanceof EasyDOM) {
-            this.element.appendChild(child.element);
-        } else if (child instanceof HTMLElement) {
-            this.element.appendChild(child);
-        } else {
-            this.element.appendChild(document.createTextNode(child));
-        }
+        this.element.appendChild(child.element ?? child);
         return this;
     }
 
